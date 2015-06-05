@@ -1,7 +1,6 @@
 package com.rebaze.maven.support;
 
 import com.google.inject.AbstractModule;
-import com.sun.media.jfxmedia.logging.Logger;
 import org.apache.maven.Maven;
 import org.apache.maven.cli.configuration.ConfigurationProcessor;
 import org.apache.maven.cli.event.DefaultEventSpyContext;
@@ -94,7 +93,7 @@ public class MavenBoot
             container.discoverComponents( extension.getClassRealm() );
         }
 
-        container.getLoggerManager().setThresholds( Logger.DEBUG );
+        container.getLoggerManager().setThresholds( 0 );
 
         Thread.currentThread().setContextClassLoader( container.getContainerRealm() );
 
